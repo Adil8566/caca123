@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maafin aku yaaa kalau ada salahh ❤️</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #5f05f1, #5289d1);
+      color: white;
+      overflow: hidden;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* ====== Navigasi ====== */
+    nav {
+      background: rgba(199, 3, 248, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 8px 15px;
+      border-radius: 15px;
+    }
+
+    nav button:hover, nav button.active {
+      background: white;
+      color: #ff69b4;
+    }
+
+    /* ====== Konten Section ====== */
+    .section {
+      display: none;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease forwards;
+      padding: 80px 20px 20px;
+    }
+
+    .section.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+
+    button.action {
+      background: white;
+      color: #ff1493;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,255,255,0.7);
+      transition: 0.3s;
+    }
+
+    button.action:hover {
+      background: #ff69b4;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* ====== Hati ====== */
+    .heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+    }
+
+    /* Popup pesan */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(255,255,255,0.95);
+      color: #ff1493;
+      padding: 25px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.6);
+      font-weight: 600;
+      font-size: 1.1em;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav>
+    <button class="active" onclick="showSection('home', this)">Beranda</button>
+    <button onclick="showSection('pesan', this)">Pesan</button>
+    <button onclick="showSection('tentang', this)">Tentang</button>
+    <button onclick="showSection('galeri', this)">Galeri</button>
+  </nav>
+
+  <!-- Section Beranda -->
+  <div id="home" class="section active">
+    <h1>😔 Maafin aku yaa mas fegi ❤️</h1>
+    <p>aku sebenere nk lagi marah marah sama kamu itu pengen dibujuk, bukan malah dicuekin😔 💕</p>
+    <button class="action" onclick="tampilPesan()">Maafin Aku 💌</button>
+  </div>
+
+  <!-- Section Pesan -->
+  <div id="pesan" class="section">
+    <h1>💌 Mas fegi tercinta</h1>
+    <p> nk ada masalah apa apa akune jangan di diemin ya sayanggggg😔💖</p>
+    <button class="action" onclick="tampilPesan()">Klik untuk Pesan Manis 💬</button>
+  </div>
+
+  <!-- Section Tentang -->
+  <div id="tentang" class="section">
+    <h1>💞 Tentang Kita</h1>
+    <p>Aku pasti banyak kekurangnya, tapi dari kekurangan kui aku pengen berusaha bareng mas, walupun mungkin ng mas dwek drng ana hasile tapi ng kene aku berjuang sungguh 🥰</p>
+  </div>
+
+  <!-- Section Galeri -->
+  <!-- Section Galeri -->
+<div id="galeri" class="section">
+  <h1>📸 Kenangan Manis</h1>
+  <p>Kenangan kita bersama  😘</p>
+
+  <!-- Container foto -->
+  <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+  ">
+    <img src="caca 1.jpg" 
+         style="width: 180px; height: 180px; object-fit: cover;
+                border-radius: 10px; box-shadow: 0 0 8px rgba(255,255,255,0.6);
+                transition: transform 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'">
+
+    <img src="caca 2.jpg" 
+         style="width: 180px; height: 180px; object-fit: cover;
+                border-radius: 10px; box-shadow: 0 0 8px rgba(255,255,255,0.6);
+                transition: transform 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'">
+
+    <img src="caca 3.jpg" 
+         style="width: 180px; height: 180px; object-fit: cover;
+                border-radius: 10px; box-shadow: 0 0 8px rgba(255,255,255,0.6);
+                transition: transform 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'">
+  </div>
+</div>
+
+
+  <!-- Popup -->
+  <div class="popup" id="popupPesan">Aku janji pengen bahagiakna mas terus 🥺</div>
+
+  <footer>© 26 November 2025 - Dibuat dengan cinta 💗 untuk mas fegi tercinta</footer>
+
+  <script>
+    // Fungsi ganti section
+    function showSection(id, btn) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Fungsi hati melayang
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+
+    // Popup pesan manis
+    const pesanMaaf = [
+      "Aku janji pengen berubah 🥺",
+      "kamu penyemangate aku ng situasi apapun ❤️",
+    ];
+
+    function tampilPesan() {
+      const popup = document.getElementById("popupPesan");
+      const randomText = pesanMaaf[Math.floor(Math.random() * pesanMaaf.length)];
+      popup.textContent = randomText;
+      popup.classList.add("show");
+      setTimeout(() => popup.classList.remove("show"), 3000);
+    }
+  </script>
+</body>
+</html>
